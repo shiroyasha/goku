@@ -1,5 +1,7 @@
+require "thor"
+
 require "goku/version"
 
 module Goku
-  # Your code goes here...
+  require_relative "goku/cli"
 end

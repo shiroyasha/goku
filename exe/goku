@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "goku"
+
+Goku::CLI.start(ARGV)
