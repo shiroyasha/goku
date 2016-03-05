@@ -1,6 +1,7 @@
 require "thor"
 require "active_support/all"
 
+require "goku/factories/base"
 require "goku/factories/method"
 require "goku/factories/class"
 require "goku/factories/module"

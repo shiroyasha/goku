@@ -1,12 +1,6 @@
 module Goku
   module Factories
-    class Method
-
-      attr_reader :name
-
-      def initialize(name)
-        @name = name
-      end
+    class Method < Base
 
       def to_s
         "def #{name}\nend"
