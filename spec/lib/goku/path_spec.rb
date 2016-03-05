@@ -25,7 +25,7 @@ describe Goku::Path do
   end
 
   describe "#spec?" do
-    context "when the path a spec file" do
+    context "when the path is a spec file" do
       it { expect(spec).to be_spec }
     end
 
@@ -35,12 +35,22 @@ describe Goku::Path do
   end
 
   describe "#test?" do
-    context "when the path a spec file" do
+    context "when the path is a spec file" do
       it { expect(spec).to be_test }
     end
 
     context "when the path is not a spec file" do
       it { expect(implementation).to_not be_test }
+    end
+  end
+
+  describe "#implementation?" do
+    context "when the path a spec file" do
+      it { expect(spec).to_not be_implementation }
+    end
+
+    context "when the path is not a spec file" do
+      it { expect(implementation).to be_implementation }
     end
   end
 

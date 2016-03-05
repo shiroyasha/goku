@@ -18,7 +18,7 @@ module Goku
     end
 
     def implementation?
-      directories.first == "spec"
+      !spec?
     end
 
     alias :test? :spec?
