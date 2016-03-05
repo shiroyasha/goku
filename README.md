@@ -1,4 +1,4 @@
-# Goku
+# Goku - The saiyan class generator
 
 ![goku](http://img12.deviantart.net/ee76/i/2016/039/7/2/goku_vs_beerus_drawing_by_pikachustar93-d9ladzb.png)
 
