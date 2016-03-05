@@ -15,7 +15,12 @@ module Goku
       end
 
       def to_s
-        "class #{name}\nend"
+        strigified_methods = methods
+                              .map(&:to_s)
+                              .map { |method| method.indent(2) }
+                              .join("\n\n")
+
+        "class #{name.camelcase}\n\n#{strigified_methods}\n\nend"
       end
 
     end
