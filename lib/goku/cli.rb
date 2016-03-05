@@ -5,18 +5,13 @@ module Goku
     def c(raw_path)
       path = Goku::Path.new(raw_path)
 
-      modules = path.directories.drop(1).map do |module_name|
-        Goku::Factories::Module.new(module_name)
-      end
+      modules = create_modules(path)
 
       klass = Goku::Factories::Class.new(path.filename)
+
       klass.add(Goku::Factories::Method.new("initialize"))
 
       modules.last.add(klass)
-
-      modules.reverse.each_cons(2) do |submodule, parent_module|
-        parent_module.add(submodule)
-      end
 
       puts modules.first.to_s
     end
@@ -25,12 +20,28 @@ module Goku
     def m(raw_path)
       path = Goku::Path.new(raw_path)
 
+      modules = create_modules(path)
+
       mod = Goku::Factories::Module.new(path.filename)
 
-      puts mod
+      modules.last.add(mod)
+
+      puts modules.first.to_s
     end
 
     map "module" => "m"
     map "class" => "m"
+
+    private
+
+    def create_modules(path)
+      modules = path.directories.drop(1).map { |m| Goku::Factories::Module.new(m) }
+
+      modules.reverse.each_cons(2) do |submodule, parent_module|
+        parent_module.add(submodule)
+      end
+
+      modules
+    end
   end
 end
