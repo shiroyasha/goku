@@ -3,7 +3,7 @@ module Goku
     class Class < Base
 
       def to_s
-        "class #{name.camelcase}\n\n#{super}\n\nend"
+        "class #{name.camelcase}\n#{super}\nend"
       end
 
     end

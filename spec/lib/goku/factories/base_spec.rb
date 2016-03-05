@@ -30,13 +30,6 @@ describe Goku::Factories::Base do
 
       expect(subject.to_s).to include("  def")
     end
-
-    it "leaves an extra space between subelements" do
-      subject.add(initialize_method)
-      subject.add(initialize_method)
-
-      expect(subject.to_s).to include("  end\n\n  def")
-    end
   end
 
 end

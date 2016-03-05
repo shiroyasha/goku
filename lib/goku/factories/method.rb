@@ -3,7 +3,7 @@ module Goku
     class Method < Base
 
       def to_s
-        "def #{name}\nend"
+        "\ndef #{name}\nend\n"
       end
 
     end

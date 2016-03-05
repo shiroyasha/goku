@@ -9,6 +9,11 @@ describe Goku::Factories::Method do
       expect(subject.to_s).to include("def initialize")
     end
 
+    it "add extra spaces around the definition" do
+      expect(subject.to_s).to match("\ndef")
+      expect(subject.to_s).to match("end\n")
+    end
+
     it "add an 'end' clause" do
       expect(subject.to_s).to include("end")
     end

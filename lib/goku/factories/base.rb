@@ -15,7 +15,7 @@ module Goku
       end
 
       def to_s
-        elements.map(&:to_s).map { |el| el.indent(2) }.join("\n\n")
+        elements.map(&:to_s).map { |el| el.indent(2) }.join
       end
 
     end
