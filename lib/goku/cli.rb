@@ -7,11 +7,7 @@ module Goku
 
       modules = create_modules(path)
 
-      klass = Goku::Factories::Class.new(path.filename)
-
-      klass.add(Goku::Factories::Method.new("initialize"))
-
-      modules.last.add(klass)
+      modules.last.add(Goku::Factories::Class.new(path.filename))
 
       puts modules.first.to_s
     end
@@ -22,9 +18,7 @@ module Goku
 
       modules = create_modules(path)
 
-      mod = Goku::Factories::Module.new(path.filename)
-
-      modules.last.add(mod)
+      modules.last.add(Goku::Factories::Module.new(path.filename))
 
       puts modules.first.to_s
     end
