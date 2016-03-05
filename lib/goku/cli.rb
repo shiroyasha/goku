@@ -6,6 +6,11 @@ module Goku
       puts path
     end
 
-    map "c" => "class"
+    desc "m PATH", "Create a module"
+    def m(path)
+      puts path
+    end
+
+    map "module" => "m"
   end
 end
