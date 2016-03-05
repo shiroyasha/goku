@@ -13,5 +13,15 @@ module Goku
       File.basename(@raw_path)
     end
 
+    def spec?
+      directories.first == "spec"
+    end
+
+    def implementation?
+      directories.first == "spec"
+    end
+
+    alias :test? :spec?
+
   end
 end
