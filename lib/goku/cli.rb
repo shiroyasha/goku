@@ -12,13 +12,15 @@ module Goku
     end
 
     desc "m PATH", "Create a module"
-    def m(path)
+    def m(raw_path)
       path = Goku::Path.new(raw_path)
 
-      puts path.full
-      puts path.to_spec.full
+      mod = Goku::Factories::Module.new(path.filename)
+
+      puts mod
     end
 
     map "module" => "m"
+    map "class" => "m"
   end
 end

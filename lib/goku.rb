@@ -3,6 +3,7 @@ require "active_support/all"
 
 require "goku/factories/method"
 require "goku/factories/class"
+require "goku/factories/module"
 
 require "goku/path"
 require "goku/version"
