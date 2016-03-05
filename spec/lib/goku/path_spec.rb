@@ -20,7 +20,15 @@ describe Goku::Path do
     subject { implementation }
 
     it "returns the name of the file" do
-      expect(subject.filename).to eq("class_builder.rb")
+      expect(subject.filename).to eq("class_builder")
+    end
+  end
+
+  describe "#extension" do
+    subject { implementation }
+
+    it "returns the name of the file" do
+      expect(subject.extension).to eq(".rb")
     end
   end
 
@@ -45,12 +53,32 @@ describe Goku::Path do
   end
 
   describe "#implementation?" do
-    context "when the path a spec file" do
+    context "when the path is a spec file" do
       it { expect(spec).to_not be_implementation }
     end
 
     context "when the path is not a spec file" do
       it { expect(implementation).to be_implementation }
+    end
+  end
+
+  describe "#to_spec" do
+    context "when the path is a spec file" do
+      it { expect { spec.to_spec }.to raise_exception(Goku::PathConversionError) }
+    end
+
+    context "when the path is an implementation file" do
+      it { expect(implementation.to_spec.full).to eq(spec.full) }
+    end
+  end
+
+  describe "#to_implementation" do
+    context "when the path is an implementation file" do
+      it { expect { implementation.to_implementation }.to raise_exception(Goku::PathConversionError) }
+    end
+
+    context "when the path is a spec file" do
+      it { expect(spec.to_implementation.full).to eq(implementation.full) }
     end
   end
 
