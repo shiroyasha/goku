@@ -5,8 +5,10 @@ module Goku
     def c(raw_path)
       path = Goku::Path.new(raw_path)
 
-      puts path.full
-      puts path.to_spec.full
+      klass = Goku::Factories::Class.new(path.filename)
+      klass.add_method(Goku::Factories::Method.new("initialize"))
+
+      puts klass
     end
 
     desc "m PATH", "Create a module"
