@@ -3,8 +3,8 @@ module Goku
 
     attr_reader :path
 
-    def initialize(raw_path)
-      @path = Goku::Path.new(raw_path)
+    def initialize(path)
+      @path = path
     end
 
     def create_class
