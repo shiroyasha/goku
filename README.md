@@ -24,14 +24,14 @@ Or install it yourself as:
 ## Usage
 
 ``` sh
-goku class lib/users/signup.rb
+$ goku class lib/users/signup.rb
+Creating lib/users/signup.rb
+Creating spec/lib/users/signup_spec.rb
 ```
 
-Creates a class in that path:
+Creates a class in `lib/users/signup.rb`:
 
 ``` ruby
-# lib/users/signup.rb
-
 module Users
   class Signup
 
@@ -42,17 +42,13 @@ module Users
 end
 ```
 
-And a rspec test file:
+And a RSpec test file `spec/lib/users/signup_spec.rb`:
 
 ``` ruby
-# spec/lib/users/signup_spec.rb
-
 require "spec_helper"
 
-module Users
-  RSpec.describe Signup do
+describe Users::Signup do
 
-  end
 end
 ```
 ## Development
