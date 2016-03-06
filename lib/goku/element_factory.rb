@@ -15,20 +15,24 @@ module Goku
       nested(Goku::Elements::Module.new(path.filename))
     end
 
+    def create_spec
+      Goku::Elements::Spec.new(path.filename, ancestor_names)
+    end
+
     def ancestors
       @ancestors ||= ancestor_names.map { |m| Goku::Elements::Module.new(m) }
     end
 
     def ancestor_names
-      @ancestor_names ||= @path.directories.drop(1).reverse
+      @ancestor_names ||= @path.directories.drop(1)
     end
 
     def nested(element)
-      ancestors.each_cons(2) { |sub, parent| parent.add(sub) }
+      ancestors.each_cons(2) { |parent, sub| parent.add(sub) }
 
-      ancestors.first.add(element)
+      ancestors.last.add(element)
 
-      ancestors.last
+      ancestors.first
     end
 
   end

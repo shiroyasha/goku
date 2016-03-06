@@ -10,9 +10,9 @@ describe Goku::ElementFactory do
       expect(subject.ancestor_names).to include "something"
     end
 
-    it "sorts the ancestors from the bottom to the top" do
-      expect(subject.ancestor_names.first).to eq "something"
-      expect(subject.ancestor_names.last).to eq "goku"
+    it "sorts the ancestors from the top to the bottom" do
+      expect(subject.ancestor_names.last).to eq "something"
+      expect(subject.ancestor_names.first).to eq "goku"
     end
   end
 
