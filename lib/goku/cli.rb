@@ -24,7 +24,7 @@ module Goku
     end
 
     map "module" => "m"
-    map "class" => "m"
+    map "class" => "c"
 
     private
 
