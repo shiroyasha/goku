@@ -9,6 +9,10 @@ describe Goku::Elements::Spec do
       expect(subject.to_s).to include("Goku::Elements::UserHelper")
     end
 
+    it "requires spec_helper" do
+      expect(subject.to_s).to include("require \"spec_helper\"")
+    end
+
     it "creates a header" do
       expect(subject.to_s).to include("describe Goku::Elements::UserHelper do")
     end
