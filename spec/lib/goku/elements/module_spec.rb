@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Goku::Factories::Module do
+describe Goku::Elements::Module do
 
   subject { described_class.new("user_helper") }
 

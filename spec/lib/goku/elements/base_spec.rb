@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Goku::Factories::Base do
+describe Goku::Elements::Base do
 
   subject { described_class.new("user") }
 
@@ -17,7 +17,7 @@ describe Goku::Factories::Base do
   end
 
   describe "to_s" do
-    let(:initialize_method) { Goku::Factories::Method.new(:initialize) }
+    let(:initialize_method) { Goku::Elements::Method.new(:initialize) }
 
     it "includes the subelement in the class" do
       subject.add(initialize_method)

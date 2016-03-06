@@ -1,11 +1,11 @@
 module Goku
-  module Factories
+  module Elements
     class Class < Base
 
       def initialize(name)
         super
 
-        initializer = Goku::Factories::Method.new("initialize")
+        initializer = Goku::Elements::Method.new("initialize")
 
         add(initializer)
       end

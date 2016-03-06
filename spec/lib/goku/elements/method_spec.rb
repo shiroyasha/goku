@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Goku::Factories::Method do
+describe Goku::Elements::Method do
 
   subject { described_class.new("initialize") }
 

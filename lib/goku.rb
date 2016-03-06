@@ -1,10 +1,10 @@
 require "thor"
 require "active_support/all"
 
-require "goku/factories/base"
-require "goku/factories/method"
-require "goku/factories/class"
-require "goku/factories/module"
+require "goku/elements/base"
+require "goku/elements/method"
+require "goku/elements/class"
+require "goku/elements/module"
 
 require "goku/path"
 require "goku/version"

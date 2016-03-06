@@ -7,7 +7,7 @@ module Goku
 
       modules = create_modules(path)
 
-      modules.last.add(Goku::Factories::Class.new(path.filename))
+      modules.last.add(Goku::Elements::Class.new(path.filename))
 
       puts modules.first.to_s
     end
@@ -18,7 +18,7 @@ module Goku
 
       modules = create_modules(path)
 
-      modules.last.add(Goku::Factories::Module.new(path.filename))
+      modules.last.add(Goku::Elements::Module.new(path.filename))
 
       puts modules.first.to_s
     end
@@ -29,7 +29,7 @@ module Goku
     private
 
     def create_modules(path)
-      modules = path.directories.drop(1).map { |m| Goku::Factories::Module.new(m) }
+      modules = path.directories.drop(1).map { |m| Goku::Elements::Module.new(m) }
 
       modules.reverse.each_cons(2) do |submodule, parent_module|
         parent_module.add(submodule)

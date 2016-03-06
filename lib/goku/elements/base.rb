@@ -1,5 +1,5 @@
 module Goku
-  module Factories
+  module Elements
     class Base
 
       attr_reader :name

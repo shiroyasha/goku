@@ -1,5 +1,5 @@
 module Goku
-  module Factories
+  module Elements
     class Module < Base
 
       def to_s
