@@ -1,10 +1,10 @@
 require "spec_helper"
 
 describe Goku::ElementFactory do
+  let(:path) { Goku::Path.new("lib/goku/something/test.rb") }
+  subject { described_class.new(path) }
 
   describe "#ancestor_names" do
-    subject { described_class.new("lib/goku/something/test.rb") }
-
     it "lists all the ancestors" do
       expect(subject.ancestor_names).to include "goku"
       expect(subject.ancestor_names).to include "something"
@@ -17,8 +17,6 @@ describe Goku::ElementFactory do
   end
 
   describe "#ancestors" do
-    subject { described_class.new("lib/goku/something/test.rb") }
-
     it "returns a list of modules" do
       subject.ancestors.each do |ancestor|
         expect(ancestor).to be_instance_of(Goku::Elements::Module)
@@ -31,8 +29,6 @@ describe Goku::ElementFactory do
   end
 
   describe "#nested" do
-    subject { described_class.new("lib/goku/something/test.rb") }
-
     let(:klass) { Goku::Elements::Class.new("test") }
 
     it "returns the top ancestor" do
