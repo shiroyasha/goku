@@ -8,6 +8,10 @@ module Goku
       @full= raw_path
     end
 
+    def exists?
+      File.exists?(full)
+    end
+
     def directories
       File.dirname(full).split("/")
     end
