@@ -5,6 +5,7 @@ require "goku/elements/base"
 require "goku/elements/method"
 require "goku/elements/class"
 require "goku/elements/module"
+require "goku/element_factory"
 
 require "goku/path"
 require "goku/version"
