@@ -1,6 +1,7 @@
 require "thor"
 require "active_support/all"
 require "fileutils"
+require "colorize"
 
 require "goku/elements/base"
 require "goku/elements/method"
