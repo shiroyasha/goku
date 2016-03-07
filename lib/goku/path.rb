@@ -8,6 +8,12 @@ module Goku
       @full= raw_path
     end
 
+    def write(content)
+      FileUtils.mkdir_p(File.dirname(full))
+
+      File.write(full, "#{content}\n")
+    end
+
     def exists?
       File.exists?(full)
     end

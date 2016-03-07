@@ -33,12 +33,10 @@ module Goku
       failure("Spec #{path.to_spec.full.colorize(:red)} already exists") if path.to_spec.exists?
 
       puts "Creating #{path.full.colorize(:green)}"
-      FileUtils.mkdir_p(File.dirname(path.full))
-      File.write(path.full, implementation)
+      path.write(implementation)
 
       puts "Creating #{path.to_spec.full.colorize(:green)}"
-      FileUtils.mkdir_p(File.dirname(path.to_spec.full))
-      File.write(path.to_spec.full, spec)
+      path.to_spec.write(spec)
     end
 
     def failure(message)
