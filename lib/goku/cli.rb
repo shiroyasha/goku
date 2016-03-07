@@ -30,7 +30,7 @@ module Goku
 
     def save(path, implementation, spec)
       failure("File #{path.full.colorize(:red)} already exists") if path.exists?
-      failure("Spec #{path.to_spec.full.colorize(:red)} already exists") if path.to_spec.exists?
+      failure("File #{path.to_spec.full.colorize(:red)} already exists") if path.to_spec.exists?
 
       puts "Creating #{path.full.colorize(:green)}"
       path.write(implementation)
