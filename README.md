@@ -1,5 +1,7 @@
 # Goku - The saiyan class generator
 
+test branch
+
 [![Gem Version](https://badge.fury.io/rb/goku.svg)](https://badge.fury.io/rb/goku)
 [![Build Status](https://semaphoreci.com/api/v1/shiroyasha/goku/branches/master/badge.svg)](https://semaphoreci.com/shiroyasha/goku)
 
