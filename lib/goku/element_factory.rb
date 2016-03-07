@@ -28,11 +28,11 @@ module Goku
     end
 
     def nested(element)
-      ancestors.each_cons(2) { |parent, sub| parent.add(sub) }
+      elements = ancestors << element
 
-      ancestors.last.add(element)
+      elements.each_cons(2) { |parent, sub| parent.add(sub) }
 
-      ancestors.first
+      elements.first
     end
 
   end

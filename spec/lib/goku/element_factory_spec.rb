@@ -42,6 +42,16 @@ describe Goku::ElementFactory do
 
       expect(test).to eq klass
     end
+
+    context "when there are no ancestors" do
+      it "returns the passed element" do
+        factory = described_class.new(Goku::Path.new("lib/test.rb"))
+
+        klass = Goku::Elements::Class.new("test")
+
+        expect(factory.nested(klass)).to eq(klass)
+      end
+    end
   end
 
 end
