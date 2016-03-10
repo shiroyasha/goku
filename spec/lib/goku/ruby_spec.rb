@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Goku::ElementFactory do
+describe Goku::Ruby do
   let(:path) { Goku::Path.new("lib/goku/something/test.rb") }
   subject { described_class.new(path) }
 
@@ -19,7 +19,7 @@ describe Goku::ElementFactory do
   describe "#ancestors" do
     it "returns a list of modules" do
       subject.ancestors.each do |ancestor|
-        expect(ancestor).to be_instance_of(Goku::Elements::Module)
+        expect(ancestor).to be_instance_of(Goku::Ruby::Module)
       end
     end
 
@@ -29,7 +29,7 @@ describe Goku::ElementFactory do
   end
 
   describe "#nested" do
-    let(:klass) { Goku::Elements::Class.new("test") }
+    let(:klass) { Goku::Ruby::Class.new("test") }
 
     it "returns the top ancestor" do
       expect(subject.nested(klass).name).to eq("goku")
@@ -45,11 +45,11 @@ describe Goku::ElementFactory do
 
     context "when there are no ancestors" do
       it "returns the passed element" do
-        factory = described_class.new(Goku::Path.new("lib/test.rb"))
+        ruby = described_class.new(Goku::Path.new("lib/test.rb"))
 
-        klass = Goku::Elements::Class.new("test")
+        klass = Goku::Ruby::Class.new("test")
 
-        expect(factory.nested(klass)).to eq(klass)
+        expect(ruby.nested(klass)).to eq(klass)
       end
     end
   end

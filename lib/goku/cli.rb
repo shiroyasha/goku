@@ -4,10 +4,10 @@ module Goku
     desc "c PATH", "Create a class"
     def c(raw_path)
       path = Goku::Path.new(raw_path)
-      factory = Goku::ElementFactory.new(path)
+      ruby = Goku::Ruby.new(path)
 
-      implementation = factory.create_class.to_s
-      spec = factory.create_spec.to_s
+      implementation = ruby.create_class.to_s
+      spec = ruby.create_spec.to_s
 
       save(path, implementation, spec)
     end
@@ -15,10 +15,10 @@ module Goku
     desc "m PATH", "Create a module"
     def m(raw_path)
       path = Goku::Path.new(raw_path)
-      factory = Goku::ElementFactory.new(path)
+      ruby = Goku::Ruby.new(path)
 
-      implementation = factory.create_module.to_s
-      spec = factory.create_spec.to_s
+      implementation = ruby.create_module.to_s
+      spec = ruby.create_spec.to_s
 
       save(path, implementation, spec)
     end

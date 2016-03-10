@@ -1,5 +1,5 @@
 module Goku
-  module Elements
+  class Ruby
     class Base
 
       attr_reader :name

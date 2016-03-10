@@ -1,5 +1,5 @@
 module Goku
-  module Elements
+  class Ruby
     class Module < Base
 
       def to_s

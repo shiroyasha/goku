@@ -1,11 +1,11 @@
 module Goku
-  module Elements
+  class Ruby
     class Class < Base
 
       def initialize(name)
         super
 
-        initializer = Goku::Elements::Method.new("initialize")
+        initializer = Goku::Ruby::Method.new("initialize")
 
         add(initializer)
       end

@@ -1,5 +1,5 @@
 module Goku
-  module Elements
+  class Ruby
     class Spec < Base
 
       def initialize(name, ancestor_names)
