@@ -39,4 +39,4 @@ blocks:
           - pwd
           - echo $SEMAPHORE_PIPELINE_ID
           - echo "Hello from $SEMAPHORE_JOB_ID"
-              
+
