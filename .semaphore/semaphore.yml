@@ -16,6 +16,7 @@ blocks:
         commands:
           - checkout
           - ls -1
+          - sleep 300
           - echo $APP_ENV
           - echo "Docker build..."
           - echo "done"
