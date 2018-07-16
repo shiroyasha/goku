@@ -1,7 +1,0 @@
-apiVersion: v1alpha
-kind: Project
-metadata:
-  name: goku3
-spec:
-  repository:
-    url: "git@github.com:shiroyasha/goku.git"
