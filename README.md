@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/goku.svg)](https://badge.fury.io/rb/goku)
 [![Build Status](https://semaphoreci.com/api/v1/shiroyasha/goku/branches/master/badge.svg)](https://semaphoreci.com/shiroyasha/goku)
 
-303
+304
 
 ![goku](http://img12.deviantart.net/ee76/i/2016/039/7/2/goku_vs_beerus_drawing_by_pikachustar93-d9ladzb.png)
 
